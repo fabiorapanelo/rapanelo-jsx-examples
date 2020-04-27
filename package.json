@@ -32,6 +32,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "rapanelo-jsx": "0.0.2"
+    "rapanelo-jsx": "0.0.3"
   }
 }

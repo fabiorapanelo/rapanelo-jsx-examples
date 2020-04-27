@@ -9,7 +9,7 @@ import {
 	useStore,
 } from 'rapanelo-jsx';
 
-const Title = (props) => <h2 style={{'color': 'red'}}>Hello {props.name}!</h2>;
+const Title = (props) => <h2 style={{ color: 'red' }}>Hello {props.name}!</h2>;
 
 const Panel = (props) => <div class="panel">{props.children}</div>;
 
@@ -48,21 +48,21 @@ const ChuckNorrisFacts = () => {
 };
 
 const ToDoApp = () => {
-	const [todos, dispatch] = useStore(state => state.todos);
+	const [todos, dispatch] = useStore((state) => state.todos);
 	const inputRef = useRef();
 
 	const addTodo = () => {
-		const value = inputRef.current.value;
+		const { value } = inputRef.current;
 		if (!value) return;
 
-		inputRef.current.value = "";
+		inputRef.current.value = '';
 		inputRef.current.focus();
 
 		dispatch({
 			type: 'ADD_TODO',
 			payload: {
-				description: value
-			}
+				description: value,
+			},
 		});
 	};
 
@@ -71,13 +71,11 @@ const ToDoApp = () => {
 			<input type="text" ref={inputRef}></input>
 			<button onClick={addTodo}>Add a new todo</button>
 			<div>
-				{todos.map((todo) => {
-					return <p>{`#${todo.id} - ${todo.description}`}</p>
-				})}
+				{todos.map((todo) => <p>{`#${todo.id} - ${todo.description}`}</p>)}
 			</div>
 		</div>
 	);
-}
+};
 
 const app = (
 	<div>

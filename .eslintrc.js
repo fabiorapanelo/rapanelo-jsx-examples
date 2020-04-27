@@ -30,7 +30,7 @@ module.exports = {
     "no-use-before-define": ["error", { "functions": false }],
     "no-plusplus": 0,
     "no-param-reassign": 0,
-    "no-trailing-spaces": "error"
+    "no-trailing-spaces": "error",
     "import/prefer-default-export": 0,
   },
 };
